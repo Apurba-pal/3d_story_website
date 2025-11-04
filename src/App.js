@@ -25,7 +25,9 @@ const App = () => {
   const [password, setPassword] = useState(new Array(6).fill(""));
   const [sequenceChecked, setSequenceChecked] = useState(false);
   const navigate = useNavigate();
+
   const sequence = "142653";
+  
   const [buttonLabel, setButtonLabel] = useState("read again");
 
   const goTo = (page) => {
@@ -37,7 +39,10 @@ const App = () => {
   };
 
   const goBack = () => {
-    setShowPopup(true);
+      setPassword(new Array(6).fill(""));
+      setSequenceChecked(false);
+      setButtonLabel("read again");
+      setShowPopup(true);
   };
 
   const handlePopupClose = () => {
